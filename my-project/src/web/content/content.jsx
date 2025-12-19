@@ -2,6 +2,8 @@ import { useState, useEffect, use } from "react";
 import Add from "./modal/add.jsx";
 import RomoveAndUpdate from "./modal/rmandud.jsx";
 import "./content.css";
+import CircularProgressBar from "./CircularProgressBar.jsx";
+import { CalendarPlus } from "lucide-react";
 
 export default function Content() {
   const [nowYear, setNowYear] = useState("2025-12-9"); // 이걸 만들고 있는 날로 기본값을 설정함
@@ -106,7 +108,7 @@ export default function Content() {
       {userName && (
         <div className="main">
           <div className="content-top text-center mt-5 border-b-2 pb-5">
-            <div className="text-4xl font-bold mb-5">{nowYear}</div>
+            <div className="text-4xl font-bold mb-5 text-black">{nowYear}</div>
             <div className="percent-bar rounded-full bg-gray-200 overflow-hidden">
               <div
                 className="percent-gauge h-full rounded-full
@@ -120,9 +122,9 @@ export default function Content() {
           </div>
           <div className="content-bottom flex">
             <div className="content-left">
-              <div className="content-left-top border-b-2 pt-2">
+              <div className="content-left-top pt-2">
                 <div className="coming-soon text-3xl font-bold mb-5 gugi-regular ml-10">
-                  다가오는 일정 :
+                  COMMING :
                 </div>
                 <ul className="coming-list orbit-regular">
                   {todoList.map((todo, index) => {
@@ -146,7 +148,7 @@ export default function Content() {
               </div>
               <div className="content-left-bottom pt-2">
                 <div className="end-coming text-3xl font-bold mb-5 gugi-regular ml-10">
-                  끝나가는 일정 :
+                  END
                 </div>
                 <ul className="coming-list orbit-regular">
                   {todoList.map((todo, index) => {
@@ -169,44 +171,71 @@ export default function Content() {
                   })}
                 </ul>
               </div>
-              <div className="btn flex ml-10 mb-5">
+              <div className="btn flex">
                 <button
                   className="add rounded-full w-20 h-20"
                   onClick={() => setAddTodo(1)}
                 >
-                  <div className="plus text-center text-8xl mb-5">+</div>
+                  <div className="plus text-center">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="40"
+                      height="40"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-calendar-plus-icon lucide-calendar-plus"
+                    >
+                      <path d="M16 19h6" />
+                      <path d="M16 2v4" />
+                      <path d="M19 16v6" />
+                      <path d="M21 12.598V6a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h8.5" />
+                      <path d="M3 10h18" />
+                      <path d="M8 2v4" />
+                    </svg>
+                  </div>
                 </button>
               </div>
             </div>
             <div className="content-right pl-10 pt-10">
-              <div className="text-4xl font-bold mb-10">진행중인 일정</div>
-              <div className="overflow-y-scroll h-5/6">
+              <div className="bar-wrap overflow-y-scroll">
                 {todoList.map((todo, index) => {
                   if (todo.DDay < 0) {
                     return (
-                      <div key={index} className="todos">
-                        <div className="text-4xl font-bold">
-                          {todo.title}{" "}
-                          <span className="sub-title text-base">
-                            {todo.subTitle}
-                          </span>
-                        </div>
-                        <div className="percent-bar rounded-full bg-gray-200 overflow-hidden">
-                          <div
-                            className="percent-gauge h-full rounded-full
-                                bg-gradient-to-r longer from-blue-600 to-red-600
-                                transition-all duration-300"
-                            style={{
-                              width: `${todo.percent}%`,
-                            }}
-                          >
-                            {todo.percent}%
-                          </div>
-                        </div>
-                      </div>
+                      <CircularProgressBar
+                        key={index}
+                        value={todo.percent}
+                        colo="green"
+                        text={todo.title}
+                      />
+                      // <div key={index} className="todos">
+                      //   <div className="text-4xl font-bold">
+                      //     {todo.title}{" "}
+                      //     <span className="sub-title text-base">
+                      //       {todo.subTitle}
+                      //     </span>
+                      //   </div>
+                      //   <div className="percent-bar rounded-full bg-gray-200 overflow-hidden">
+                      //     <div
+                      //       className="percent-gauge h-full rounded-full
+                      //           bg-gradient-to-r longer from-blue-600 to-red-600
+                      //           transition-all duration-300"
+                      //       style={{
+                      //         width: `${todo.percent}%`,
+                      //       }}
+                      //     >
+                      //       {todo.percent}%
+                      //     </div>
+                      //   </div>
+                      // </div>
                     );
                   }
                 })}
+                <CircularProgressBar value={10} colo="green" text={"tod"} />
+                <CircularProgressBar value={10} colo="green" text={"todo"} />
               </div>
             </div>
           </div>

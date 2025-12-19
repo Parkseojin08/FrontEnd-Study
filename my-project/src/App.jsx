@@ -7,9 +7,10 @@ import Header from "./web/header/header.jsx";
 import SignUp from "./web/header/signup/signUp.jsx";
 import SignIn from "./web/header/signin/signIn.jsx";
 import Content from "./web/content/content.jsx";
+
 function App() {
   return (
-    <div className="all-wrap">
+    <>
       <Routes>
         <Route
           path="/"
@@ -39,7 +40,7 @@ function App() {
           }
         />
       </Routes>
-    </div>
+    </>
   );
 }
 

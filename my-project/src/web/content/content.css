@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Gugi&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Orbit&display=swap");
+
+.main {
+  width: 1800px;
+  margin: 0 auto;
+}
 .percent-bar {
   width: 1000px;
   height: 40px;
@@ -20,7 +25,6 @@
 }
 .content-right {
   width: 60vw;
-  border-left: 2px solid white;
 }
 li {
   list-style: decimal-leading-zero;
@@ -29,8 +33,17 @@ li {
 }
 .content-left-top,
 .content-left-bottom {
-  height: 350px;
+  height: 300px;
+  width: 650px;
+  margin: 0 auto;
+  margin-top: 40px;
+  background-color: #353535;
+  border-radius: 10px;
+  background-color: rgb(255, 245, 245);
+  color: black;
+  box-shadow: 5px 0 10px gray;
 }
+
 .add {
   background-color: #0d6efd;
   color: white;
@@ -93,4 +106,16 @@ li {
   color: black;
   border-radius: 10px;
   margin-top: 30px;
+}
+.bar-wrap {
+  overflow: scroll;
+  display: flex;
+  align-content: space-around;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex-direction: column;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.25) rgba(255, 255, 255, 0.08);
+  height: 650px;
+  width: 1100px;
 }
