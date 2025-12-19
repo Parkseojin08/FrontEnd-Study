@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Gugi&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Orbit&display=swap");
+.percent-bar {
+  width: 1000px;
+  height: 40px;
+  display: block;
+  background-color: white;
+  margin: 0 auto;
+}
+.percent-gauge {
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+}
+
+.content-left {
+  width: 40vw;
+}
+.content-right {
+  width: 60vw;
+  border-left: 2px solid white;
+}
+li {
+  list-style: decimal-leading-zero;
+  margin-left: 150px;
+  font-size: 1.5rem;
+}
+.content-left-top,
+.content-left-bottom {
+  height: 350px;
+}
+.add {
+  background-color: #0d6efd;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.plus {
+  display: inline-block;
+}
+.add:hover {
+  background-color: #0a58ca;
+}
+.gugi-regular {
+  font-family: "Gugi", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.orbit-regular {
+  font-family: "Orbit", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.todos {
+  display: inline-block;
+  margin-bottom: 30px;
+}
+.modal-names {
+  width: 100px;
+  display: inline-block;
+  font-size: 16px;
+}
+.modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.modal-wrap {
+  border: 1px solid gray;
+  background-color: #353535;
+  padding: 30px;
+  border-radius: 10px;
+  cursor: default;
+  z-index: 10;
+}
+.butn-add {
+  width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
+  margin-top: 30px;
+}
